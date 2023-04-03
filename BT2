@@ -1,0 +1,152 @@
+public abstract class Vehical {
+    protected  String typeofVehical;
+  Brand brand ;
+
+    public Vehical() {
+        super();
+    }
+
+    public Vehical(String typeofVehical, Brand brand) {
+        super();
+        this.typeofVehical = typeofVehical;
+        this.brand = brand;
+    }
+
+    public Brand getBrand() {
+        return brand;
+    }
+
+    public void setBrand(Brand brand) {
+        this.brand = brand;
+    }
+
+   
+
+    public String getTypeofVehical() {
+        return typeofVehical;
+    }
+
+    public void setTypeofVehical(String typeofVehical) {
+        this.typeofVehical = typeofVehical;
+    }
+    
+    public void Begin(){
+        System.out.println("Begin");
+    }
+    public void Acceleration(){
+        System.out.println("Acceleration one more time !");
+    }
+    public abstract double getSpeed();
+    
+     public String getManufacturers_Name() {
+         return this.brand.getManufacturers_Name();//lấy tên hãng sản xuất
+     }
+}
+public class Plane extends Vehical{
+
+
+    private String Fuel;
+
+    public Plane(String Fuel, String typeofVehical, Brand brand) {
+        super("MH570", brand);
+        this.Fuel = Fuel;
+    }
+
+    
+
+   
+
+    public String getFuel() {
+        return Fuel;
+    }
+
+    public void setFuel(String Fuel) {
+        this.Fuel = Fuel;
+    }
+     
+    public void catCanh(){
+        System.out.println("catCanh fly through air");
+    }
+    public void haCanh(){
+        System.out.println("haCAnh in HCM city"); 
+    }
+    
+    @Override
+    public double getSpeed(){
+        return 300;
+    }
+
+    
+}
+public class Car  extends  Vehical{
+    private String fuel;
+
+    public Car(String fuel, String typeofVehical, Brand brand) {
+        super("Car", brand);
+        this.fuel = fuel;
+    }
+
+    
+
+    public Car() {
+    }
+
+    public String getFuel() {
+        return fuel;
+    }
+
+    public void setFuel(String fuel) {
+        this.fuel = fuel;
+    }
+    @Override
+    public double getSpeed(){
+        return 60;
+    }
+}
+public  class bicycle extends Vehical {
+    @Override
+    public double getSpeed(){
+        return 25;
+    }
+
+    public bicycle(String typeofVehical, Brand brand) {
+        super("Bicycle", brand);
+    }
+
+    
+    
+}
+public class Brand {
+    public String Manufacturers_Name;
+    public String Country_Name;
+
+    public Brand(String Manufacturers_Name, String Country_Name) {
+        this.Manufacturers_Name = Manufacturers_Name;
+        this.Country_Name = Country_Name;
+    }
+
+    public String getManufacturers_Name() {
+        return Manufacturers_Name;
+    }
+
+    public void setManufacturers_Name(String Manufacturers_Name) {
+        this.Manufacturers_Name = Manufacturers_Name;
+    }
+
+    public String getCountry_Name() {
+        return Country_Name;
+    }
+
+    public void setCountry_Name(String Country_Name) {
+        this.Country_Name = Country_Name;
+    }
+
+    public Brand() {
+    }
+
+    @Override
+    public String toString() {
+        return "Brand{" + "Manufacturers_Name=" + Manufacturers_Name + ", Country_Name=" + Country_Name + '}';
+    }
+    
+}
