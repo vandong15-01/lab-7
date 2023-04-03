@@ -1,0 +1,113 @@
+public interface Shape {
+    public double getArea();
+    public void getParameter();
+    
+}
+public class Circle implements Shape{
+    final float PI = 3.14f;
+    private float radius;
+    @Override
+        public double getArea(){
+            return radius*radius*PI;
+        }
+        @Override
+        public void getParameter(){
+            System.out.println("Excerice3.Circle.getParameter()");
+        }
+
+    public Circle(float radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public String toString() {
+        return "Circle{" + "radius=" + radius + '}';
+    }
+
+    public float getRadius() {
+        return radius;
+    }
+
+    public void setRadius(float radius) {
+        this.radius = radius;
+    }
+
+}
+public class Rectange implements Shape{
+    private float width;
+    private float height;
+    @Override 
+    public double getArea(){
+        return width*height;
+    }
+    @Override
+    public void  getParameter(){
+        System.out.println("parameter rectange are width and height");
+    }
+
+    public Rectange(float width, float height) {
+        this.width = width;
+        this.height = height;
+    }
+    public void isSquare(){
+        System.out.println("Excerice3.Rectange.isSquare()");
+    }
+
+    public float getWidth() {
+        return width;
+    }
+
+    public void setWidth(float width) {
+        this.width = width;
+    }
+
+    public float getHeight() {
+        return height;
+    }
+
+    public void setHeight(float height) {
+        this.height = height;
+    }
+
+    @Override
+    public String toString() {
+        return "Rectange{" + "width=" + width + ", height=" + height + '}';
+    }
+    
+}
+public class Triangle implements Shape{
+   private float sides;
+   private String paremeter;
+   
+   @Override 
+   public double getArea(){
+       return sides*sides;
+   }
+   @Override
+       public void getParameter(){
+           System.out.println("Excerice3.Triangle.getParameter()");
+       }
+
+    public Triangle(float sides, String paremeter) {
+        this.sides = sides;
+        this.paremeter = paremeter;
+    }
+
+    public float getSides() {
+        return sides;
+    }
+
+    public void setSides(float sides) {
+        this.sides = sides;
+    }
+
+    public String getParemeter() {
+        return paremeter;
+    }
+
+    public void setParemeter(String paremeter) {
+        this.paremeter = paremeter;
+    }
+       
+       
+}
